@@ -182,6 +182,8 @@ const Home = () => {
         router.replace(`/workflows/${newWorkflow.id}`);
       } catch (error) {
         console.error("Failed to create workflow:", error);
+        hasCreatedWorkflowRef.current = false;
+        setCreatingTemplateId(null);
         toast.error("Failed to create workflow");
       }
     };
